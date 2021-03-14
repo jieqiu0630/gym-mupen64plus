@@ -58,7 +58,7 @@ IMAGE_HELPER = ImageHelper()
 ###############################################
 class Mupen64PlusEnv(gym.Env):
     __metaclass__ = abc.ABCMeta
-    metadata = {'render.modes': ['human']}
+    metadata = {'render.modes': ['rgb_array']}
 
     def __init__(self):
         self.viewer = None
