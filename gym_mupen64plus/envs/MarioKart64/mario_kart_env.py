@@ -388,3 +388,6 @@ class MarioKartEnv(Mupen64PlusEnv):
                    'RainbowRoad'      : (3, 3)}
 
         self.MAP_SERIES, self.MAP_CHOICE = courses[course]
+    
+    def _seed(self):
+        return 1
