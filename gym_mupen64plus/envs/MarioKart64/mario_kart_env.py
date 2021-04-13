@@ -46,11 +46,11 @@ class MarioKartEnv(Mupen64PlusEnv):
 
         self.end_race_pixel_color = self.END_RACE_PIXEL_COLORS[self.config["GFX_PLUGIN"]]
         
-        self.action_space = spaces.MultiDiscrete([[-80, 80],  # Joystick X-axis
-                                                  [-80, 80],  # Joystick Y-axis
-                                                  [  0,  1],  # A Button
-                                                  [  0,  1],  # B Button
-                                                  [  0,  1]]) # RB Button
+        self.action_space = spaces.MultiDiscrete([[1, 80],  # Joystick X-axis
+                                                  [1, 80],  # Joystick Y-axis
+                                                  [1,  1],  # A Button
+                                                  [1,  1],  # B Button
+                                                  [1,  1]]) # RB Button
 
     def _load_config(self):
         self.config.update(yaml.safe_load(open(os.path.join(os.path.dirname(inspect.stack()[0][1]), "mario_kart_config.yml"))))
