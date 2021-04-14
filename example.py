@@ -19,6 +19,10 @@ for i in range(10000):
     (obs, rew, end, info) = env.step([-80, 0, 1, 0, 0]) # Hard-left doughnuts!
     (obs, rew, end, info) = env.step([-80, 0, 0, 0, 0]) # Hard-left doughnuts!
 
+env.reset()
+print("Reseted!")
+for i in range(1000):
+    env.step([-80, 0, 1, 0, 0])
 raw_input("Press <enter> to exit... ")
 
 env.close()
