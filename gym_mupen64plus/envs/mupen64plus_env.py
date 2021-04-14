@@ -420,6 +420,7 @@ class ControllerHTTPServer(HTTPServer, object):
         while server_address in server_address_seen:
             new_port = server_address[1] + 1
             server_address = (server_address[0], new_port)
+        server_address_seen.add(server_address)
         super(ControllerHTTPServer, self).__init__(server_address, self.ControllerRequestHandler)
 
     def send_controls(self, controls):
