@@ -30,6 +30,8 @@ import numpy as np
 
 import mss
 
+server_address_seen = set()
+
 ###############################################
 class ImageHelper:
 
@@ -415,6 +417,9 @@ class ControllerHTTPServer(HTTPServer, object):
         self.frame_skip = frame_skip
         self.frame_skip_enabled = True
         print("SERVER ADDRESS", server_address)
+        while server_address in server_address_seen:
+            new_port = server_address[1] + 1
+            server_address = (server_address[0], new_port)
         super(ControllerHTTPServer, self).__init__(server_address, self.ControllerRequestHandler)
 
     def send_controls(self, controls):
