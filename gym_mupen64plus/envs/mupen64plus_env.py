@@ -414,6 +414,7 @@ class ControllerHTTPServer(HTTPServer, object):
         self.responses_sent = 0
         self.frame_skip = frame_skip
         self.frame_skip_enabled = True
+        print("SERVER ADDRESS", server_address)
         super(ControllerHTTPServer, self).__init__(server_address, self.ControllerRequestHandler)
 
     def send_controls(self, controls):
