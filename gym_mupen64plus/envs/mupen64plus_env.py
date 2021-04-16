@@ -166,6 +166,7 @@ class Mupen64PlusEnv(gym.Env):
             self.controller_server.send_controls(ControllerState(action))
 
     def _wait(self, count=1, wait_for='Unknown'):
+        cprint("Waiting for  "+wait_for, "blue")
         self._act(ControllerState.NO_OP, count=count)
 
     def _press_button(self, button, times=1):
