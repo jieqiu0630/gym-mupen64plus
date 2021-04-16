@@ -78,9 +78,9 @@ class Mupen64PlusEnv(gym.Env):
 
 
         # initial_disp = os.environ["DISPLAY"]
-        initial_disp = last_display
+        initial_disp = Mupen64PlusEnv.last_display
         os.environ["DISPLAY"] = initial_disp
-        last_display += 1
+        Mupen64PlusEnv.last_display += 1
         cprint('Initially on DISPLAY %s' % initial_disp, 'red')
 
         # If the EXTERNAL_EMULATOR environment variable is True, we are running the
