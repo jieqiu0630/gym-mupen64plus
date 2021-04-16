@@ -56,11 +56,11 @@ MILLISECOND = 1.0 / 1000.0
 
 IMAGE_HELPER = ImageHelper()
 
-last_display = 0
 ###############################################
 class Mupen64PlusEnv(gym.Env):
     __metaclass__ = abc.ABCMeta
     metadata = {'render.modes': ['rgb_array']}
+    last_display = 0
 
     def __init__(self):
         self.viewer = None
