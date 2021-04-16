@@ -56,7 +56,7 @@ MILLISECOND = 1.0 / 1000.0
 
 IMAGE_HELPER = ImageHelper()
 
-
+last_display = 0
 ###############################################
 class Mupen64PlusEnv(gym.Env):
     __metaclass__ = abc.ABCMeta
@@ -77,7 +77,10 @@ class Mupen64PlusEnv(gym.Env):
         self.controller_server, self.controller_server_thread = self._start_controller_server()
 
 
-        initial_disp = os.environ["DISPLAY"]
+        # initial_disp = os.environ["DISPLAY"]
+        initial_disp = last_display
+        os.environ["DISPLAY"] = initial_disp
+        last_display += 1
         cprint('Initially on DISPLAY %s' % initial_disp, 'red')
 
         # If the EXTERNAL_EMULATOR environment variable is True, we are running the
