@@ -130,7 +130,8 @@ class Mupen64PlusEnv(gym.Env):
                                                   [  1,  1], # D-Pad Up Button
                                                   [  1,  1], # Start Button
                                                  ])
-
+        print("Done initializing")        
+ 
     def _base_load_config(self):
         self.config = yaml.safe_load(open(os.path.join(os.path.dirname(inspect.stack()[0][1]), "config.yml")))
         self._load_config()
@@ -419,7 +420,6 @@ class ControllerHTTPServer(HTTPServer, object):
         self.responses_sent = 0
         self.frame_skip = frame_skip
         self.frame_skip_enabled = True
-        print("SERVER ADDRESS", server_address)
         while server_address in server_address_seen:
             new_port = server_address[1] + 1
             server_address = (server_address[0], new_port)
