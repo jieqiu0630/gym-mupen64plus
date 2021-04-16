@@ -421,6 +421,7 @@ class ControllerHTTPServer(HTTPServer, object):
         self.frame_skip = frame_skip
         self.frame_skip_enabled = True
         while server_address in server_address_seen:
+            cprint("server address " + str(server_address), 'green')
             new_port = server_address[1] + 1
             server_address = (server_address[0], new_port)
         server_address_seen.add(server_address)
