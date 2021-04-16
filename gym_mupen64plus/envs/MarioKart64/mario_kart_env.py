@@ -252,13 +252,13 @@ class MarioKartEnv(Mupen64PlusEnv):
     def _navigate_menu(self):
         self._wait(count=10, wait_for='Nintendo screen')
         self._press_button(ControllerState.A_BUTTON)
-
+        print("Finish waiting for Nintendo screen")
         self._wait(count=68, wait_for='Mario Kart splash screen')
         self._press_button(ControllerState.A_BUTTON)
-
+        print("Finish waiting for mario kart screen")
         self._wait(count=68, wait_for='Game Select screen')
         self._navigate_game_select()
-
+        print("Wait for game select screen")
         self._wait(count=14, wait_for='Player Select screen')
         self._navigate_player_select()
 
