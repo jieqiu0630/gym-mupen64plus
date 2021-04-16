@@ -424,6 +424,7 @@ class ControllerHTTPServer(HTTPServer, object):
             new_port = server_address[1] + 1
             server_address = (server_address[0], new_port)
         server_address_seen.add(server_address)
+        cprint(server_address, "green")
         super(ControllerHTTPServer, self).__init__(server_address, self.ControllerRequestHandler)
 
     def send_controls(self, controls):
