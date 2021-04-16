@@ -2,7 +2,7 @@
 import gym, gym_mupen64plus
 
 env = gym.make('Mario-Kart-Luigi-Raceway-v0')
-env2 = gym.make('Mario-Kart-Luigi-Raceway-v0')
+# env2 = gym.make('Mario-Kart-Luigi-Raceway-v0')
 env.reset()
 
 print("NOOP waiting for green light")
@@ -14,15 +14,15 @@ for i in range(50):
     (obs, rew, end, info) = env.step([0, 0, 1, 0, 0]) # Drive straight
 
 print("Doughnuts!!")
-for i in range(10000):
+for i in range(10):
     if i % 100 == 0:
         print("Step " + str(i))
     (obs, rew, end, info) = env.step([-80, 0, 1, 0, 0]) # Hard-left doughnuts!
     (obs, rew, end, info) = env.step([-80, 0, 0, 0, 0]) # Hard-left doughnuts!
 
-env.reset()
-print("Reseted!")
-for i in range(1000):
+# env.reset()
+# print("Reseted!")
+for i in range(10):
     env.step([-80, 0, 1, 0, 0])
 raw_input("Press <enter> to exit... ")
 
