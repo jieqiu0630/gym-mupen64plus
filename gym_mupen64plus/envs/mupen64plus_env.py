@@ -162,7 +162,11 @@ class Mupen64PlusEnv(gym.Env):
         return obs, reward, self.episode_over, {}
 
     def _act(self, action, count=1):
+        print("Count is ", count)
+        counter = 0
         for _ in itertools.repeat(None, count):
+            print("counter", counter)
+            counter += 1
             self.controller_server.send_controls(ControllerState(action))
 
     def _wait(self, count=1, wait_for='Unknown'):
