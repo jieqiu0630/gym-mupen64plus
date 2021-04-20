@@ -113,22 +113,22 @@ class Mupen64PlusEnv(gym.Env):
         self.observation_space = \
             spaces.Box(low=0, high=255, shape=(SCR_H, SCR_W, SCR_D))
 
-        self.action_space = spaces.MultiDiscrete([[1, 80], # Joystick X-axis
-                                                  [1, 80], # Joystick Y-axis
-                                                  [ 1,  1], # A Button
-                                                  [  1,  1], # B Button
-                                                  [  1,  1], # RB Button
-                                                  [  1,  1], # LB Button
-                                                  [  1,  1], # Z Button
-                                                  [  1,  1], # C Right Button
-                                                  [  1,  1], # C Left Button
-                                                  [  1,  1], # C Down Button
-                                                  [  1,  1], # C Up Button
-                                                  [  1,  1], # D-Pad Right Button
-                                                  [  1,  1], # D-Pad Left Button
-                                                  [  1,  1], # D-Pad Down Button
-                                                  [  1,  1], # D-Pad Up Button
-                                                  [  1,  1], # Start Button
+        self.action_space = spaces.MultiDiscrete([[1, 161], # Joystick X-axis
+                                                  [1, 161], # Joystick Y-axis
+                                                  [ 1,  2], # A Button
+                                                  [  1, 2], # B Button
+                                                  [  1,  2], # RB Button
+                                                  [  1,  2], # LB Button
+                                                  [  1,  2], # Z Button
+                                                  [  1,  2], # C Right Button
+                                                  [  1,  2], # C Left Button
+                                                  [  1,  2], # C Down Button
+                                                  [  1,  2], # C Up Button
+                                                  [  1,  2], # D-Pad Right Button
+                                                  [  1,  2], # D-Pad Left Button
+                                                  [  1,  2], # D-Pad Down Button
+                                                  [  1,  2], # D-Pad Up Button
+                                                  [  1,  2], # Start Button
                                                  ])
         print("Done initializing")        
  
