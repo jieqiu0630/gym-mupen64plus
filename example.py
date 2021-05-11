@@ -1,8 +1,11 @@
 #!/bin/python
 import gym, gym_mupen64plus
+from gym import wrappers
+from os import path
 
-env2 = gym.make('Mario-Kart-Luigi-Raceway-v0')
 env = gym.make('Mario-Kart-Luigi-Raceway-v0')
+env = wrappers.Monitor(env, path.join(logdir, 'videos/'), force=True,
+                           video_callable=lambda x: True)
 env.reset()
 
 print("NOOP waiting for green light")
