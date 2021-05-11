@@ -28,6 +28,11 @@ for i in range(10):
 # print("Reseted!")
 for i in range(10):
     env.step([-80, 0, 1, 0, 0])
+
+done = False
+while not done:
+    obs, rew, done, info = env.step([-80, 0, 1, 0, 0])
+
 raw_input("Press <enter> to exit... ")
 
 env.reset()
