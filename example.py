@@ -5,7 +5,7 @@ from os import path
 
 env = gym.make('Mario-Kart-Luigi-Raceway-v0')
 video_log_path = 'gym_mupen64plus/ROMs/videos'
-env = wrappers.Monitor(env, video_log_path, force=True,
+env = wrappers.Monitor(env, video_log_path,write_upon_reset=True, force=True,
                            video_callable=lambda x: True)
 env.reset()
 
@@ -30,4 +30,5 @@ for i in range(10):
     env.step([-80, 0, 1, 0, 0])
 raw_input("Press <enter> to exit... ")
 
+env.reset()
 env.close()
