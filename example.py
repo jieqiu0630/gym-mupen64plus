@@ -4,7 +4,7 @@ from gym import wrappers
 from os import path
 
 env = gym.make('Mario-Kart-Luigi-Raceway-v0')
-video_log_path = '/src/gym-mupen64lus/gym_mupen64plus/ROMs/videos'
+video_log_path = '/src/gym-mupen64plus/gym_mupen64plus/ROMs/videos'
 env = wrappers.Monitor(env, video_log_path,write_upon_reset=True, force=True,
                            video_callable=lambda x: True)
 env.reset()
